@@ -10,11 +10,11 @@ if [[ -f $FILE ]]; then
 	rev $1
 	fi
 else
-	content=$(curl -L $1)
+	File=$(curl -S $1)
 	if [ $2 = "count" ]; then
-	wc -m < content
+	wc -m < $1
 	fi
 	if [ $2 = "invert" ]; then
-	rev content
+	rev $1
 	fi
 fi
